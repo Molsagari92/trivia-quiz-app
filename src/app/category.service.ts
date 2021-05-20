@@ -31,4 +31,7 @@ export class CategoryService {
     }
   }
 
+  getCategories(){
+    return this.categories.slice();
+  }
 }

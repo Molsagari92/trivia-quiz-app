@@ -15,6 +15,10 @@ export class QuestionService {
     return this.http.get('http://jservice.io/api/random');
   }
 
+  getQuestionByCategory(id: number) {
+    return this.http.get('http://jservice.io/api/clues?category=' + id);
+  }
+
   createQuestion(responseData: any) {
     let randomIndex: number = 0;
     if (responseData.length > 1) {
