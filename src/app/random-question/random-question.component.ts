@@ -27,6 +27,7 @@ export class RandomQuestionComponent implements OnInit {
         ''
       ), 0);
   categories: Category[]=[];
+  delayChecked: boolean = false;
 
 
   constructor(
@@ -47,6 +48,13 @@ export class RandomQuestionComponent implements OnInit {
     setTimeout(() => {
       this.showAnswer = true;
     }, this.timeOut * 1000);
+  }
+
+  onDelayCheck(){
+    this.delayChecked = !this.delayChecked;
+    if(!this.delayChecked){
+      this.timeOut = 0;
+    }
   }
 
   onSaveDelay(value: string) {
