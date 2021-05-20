@@ -1,1 +1,28 @@
-<p>category-question works!</p>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="btn-group" appDropdown>
+      <button
+        type="button"
+        class="btn btn-primary dropdown-toggle">
+        Select Category <span class="caret"></span>
+      </button>
+      <ul
+        class="dropdown-menu">
+        <li *ngFor="let category of categories">
+          <a
+            (click)="onSelectCategory(category.id)"
+            style="cursor: pointer">
+            {{category.title}} ({{category.cluesCount}})
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<button type="button" class="btn btn-primary" (click)="onSelectCategory(this.actualCategoryId)"
+        [disabled]="!this.actualCategoryId">Give me another question!
+</button>
+<div *ngIf="actualQuestion.category">Category: {{actualQuestion.category.title}}</div>
+<div>Question: {{actualQuestion.question}}</div>
+<div>Answer:<span *ngIf="showAnswer">{{actualQuestion.answer}}</span></div>
+

@@ -10,13 +10,15 @@ import {CategoryQuestionComponent} from './category-question/category-question.c
 import {AppRoutingModule} from "./app-routing.module";
 import {QuestionService} from "./question.service";
 import {CategoryService} from "./category.service";
+import {DropdownDirective} from "./dropdown.directive";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     RandomQuestionComponent,
-    CategoryQuestionComponent
+    CategoryQuestionComponent,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
