@@ -32,6 +32,7 @@ export class CategoryQuestionComponent implements OnInit, OnDestroy {
   private cChangedSub: Subscription | undefined;
   timeOut: number = 0;
   showAnswer: boolean = false;
+  delayChecked: boolean = false;
 
 
   constructor(
@@ -60,6 +61,12 @@ export class CategoryQuestionComponent implements OnInit, OnDestroy {
     }, this.timeOut * 1000);
   }
 
+  onDelayCheck() {
+    this.delayChecked = !this.delayChecked;
+    if (this.delayChecked == false) {
+      this.timeOut = 0;
+    }
+  }
 
   onSaveDelay(value: string) {
     this.timeOut = +value;

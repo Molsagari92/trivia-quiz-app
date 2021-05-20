@@ -1,3 +1,20 @@
+<div>
+  <input type="checkbox" value="['delayChecked']" (click)="onDelayCheck()" id="delayCheck">
+  <label for="delayCheck"> I want some delay</label>
+</div>
+<div class="row" *ngIf="delayChecked">
+  <div class="col-sm-2 form-group">
+    <label for="delay">Delay</label>
+    <input
+      type="number"
+      id="delay"
+      class="form-control"
+      pattern="^[1-9]+[0-9]*$"
+      value="['timeOut']"
+      #delay>
+    <button type="button" class="btn btn-success" (click)="onSaveDelay(delay.value)">Save</button>
+  </div>
+</div>
 <div class="row">
   <div class="col-xs-12">
     <div class="btn-group" appDropdown>
