@@ -1,1 +1,4 @@
-<p>random-question works!</p>
+<button type="button" class="btn btn-primary" (click)="onGetQuestion()">Give me another question!</button>
+<div *ngIf="actualQuestion.category">Category: {{actualQuestion.category.title}}</div>
+<div>Question: {{actualQuestion.question}}</div>
+<div>Answer: <span *ngIf="showAnswer">{{actualQuestion.answer}}</span></div>
