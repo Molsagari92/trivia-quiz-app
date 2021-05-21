@@ -1,0 +1,72 @@
+<div>
+  <input type="checkbox" value="['delayChecked']" (click)="onDelayCheck()" id="delayCheck">
+  <label for="delayCheck"> I want some delay</label>
+</div>
+<div class="row" *ngIf="delayChecked">
+  <div class="col-sm-2 form-group">
+    <label for="delay">Delay</label>
+    <input
+      type="number"
+      id="delay"
+      class="form-control"
+      pattern="^[1-9]+[0-9]*$"
+      value="['timeOut']"
+      #delay>
+    <button type="button" class="btn btn-success" (click)="onSaveDelay(delay.value)">Save</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="btn-group" appDropdown>
+      <button
+        type="button"
+        class="btn btn-primary dropdown-toggle">
+        Select Value<span class="caret"></span>
+      </button>
+      <ul
+        class="dropdown-menu">
+        <li *ngFor="let value of values">
+          <a
+            (click)="onSelectValue(value)"
+            style="cursor: pointer">
+            {{value}}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="btn-group" appDropdown>
+      <button
+        type="button"
+        class="btn btn-primary dropdown-toggle">
+        Select Category <span class="caret"></span>
+      </button>
+      <ul
+        class="dropdown-menu">
+        <li *ngFor="let category of categories">
+          <a
+            (click)="onSelectCategory(category.id)"
+            style="cursor: pointer">
+            {{category.title}} ({{category.cluesCount}})
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<button
+  type="button"
+  class="btn btn-primary"
+  (click)="onGetQuestion()">Give me a question!
+</button>
+<hr>
+<div *ngIf="actualQuestion.category">Category: {{actualQuestion.category.title}}</div>
+<div>Value: {{actualQuestion.value}}</div>
+<div>Question: {{actualQuestion.question}}</div>
+<div>Answer: <span *ngIf="showAnswer">{{actualQuestion.answer}}</span></div>
+

@@ -25,7 +25,7 @@ export class RandomQuestionComponent implements OnInit {
         0,
         '',
         ''
-      ), 0);
+      ), 0, 0);
   categories: Category[]=[];
   delayChecked: boolean = false;
 

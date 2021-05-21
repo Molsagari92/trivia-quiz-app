@@ -26,7 +26,7 @@ export class CategoryQuestionComponent implements OnInit, OnDestroy {
         0,
         '',
         ''
-      ), 0);
+      ), 0, 0);
   categories: Category[] = [];
   actualCategoryId: number = 0;
   private cChangedSub: Subscription | undefined;

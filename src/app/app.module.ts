@@ -11,6 +11,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import {QuestionService} from "./question.service";
 import {CategoryService} from "./category.service";
 import {DropdownDirective} from "./dropdown.directive";
+import { FilteredQuestionComponent } from './filtered-question/filtered-question.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {DropdownDirective} from "./dropdown.directive";
     HeaderComponent,
     RandomQuestionComponent,
     CategoryQuestionComponent,
-    DropdownDirective
+    DropdownDirective,
+    FilteredQuestionComponent
   ],
   imports: [
     BrowserModule,
